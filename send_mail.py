@@ -18,7 +18,7 @@ async def send_email(to_email: str, subject: str, html_content: str):
         dict: Response from SendGrid API
     """
     # Verify environment variables are loaded
-    sendgrid_api_key ='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'
+    sendgrid_api_key ='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'
     from_email = os.getenv('SENDGRID_FROM_EMAIL') or os.getenv('SENDGRID_FROM_EMAIL')  # Handle typo
     
     if not sendgrid_api_key:
