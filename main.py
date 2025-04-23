@@ -8,6 +8,9 @@ from fastapi.staticfiles import StaticFiles  # Add this for static files
 from dashboard import router as dashboard_router
 
 app = FastAPI()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Default to 8000 if PORT not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 # Add CORS middleware
 app.add_middleware(
