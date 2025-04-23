@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles  # Add this for static files
 
 # Import the dashboard router
-from dashboard import router as dashboard_router
 
 app = FastAPI()
 if __name__ == "__main__":
@@ -24,7 +23,6 @@ app.add_middleware(
 # Mount static files if you have any (for CSS/JS)
 
 # Include the dashboard router
-app.include_router(dashboard_router, prefix="/api")
 
 class EmailRequest(BaseModel):
     to_email: str
